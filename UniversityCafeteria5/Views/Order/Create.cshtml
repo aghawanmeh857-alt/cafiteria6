@@ -1,0 +1,48 @@
+﻿@model UniversityCafeteria5.Models.Order
+
+<h2>Add Order</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CustomerName, "Customer Name")
+        @Html.TextBoxFor(model => model.CustomerName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.OrderDate, "Order Date")
+        @Html.TextBoxFor(model => model.OrderDate, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.OrderDate, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TotalPrice, "Total Price")
+        @Html.TextBoxFor(model => model.TotalPrice, new { type = "number", step = "0.01", @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.TotalPrice, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Status, "Status")
+        @Html.TextBoxFor(model => model.Status, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EmployeeId, "Employee")
+        @Html.DropDownListFor(model => model.EmployeeId,
+            (IEnumerable<SelectListItem>)ViewBag.Employees,
+            "Select Employee",
+            new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+<p>
+    @Html.ActionLink("Back to Orders", "Index")
+</p>

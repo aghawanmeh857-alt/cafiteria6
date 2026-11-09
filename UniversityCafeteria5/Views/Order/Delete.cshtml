@@ -1,0 +1,21 @@
+﻿@model UniversityCafeteria5.Models.Order
+
+<h2>Delete Order</h2>
+
+<p>Are you sure you want to delete this order?</p>
+
+<p><strong>Id:</strong> @Html.DisplayFor(model => model.Id)</p>
+<p><strong>Customer Name:</strong> @Html.DisplayFor(model => model.CustomerName)</p>
+<p><strong>Order Date:</strong> @Html.DisplayFor(model => model.OrderDate)</p>
+<p><strong>Total Price:</strong> @Html.DisplayFor(model => model.TotalPrice)</p>
+<p><strong>Status:</strong> @Html.DisplayFor(model => model.Status)</p>
+<p><strong>Employee Id:</strong> @Html.DisplayFor(model => model.EmployeeId)</p>
+
+@using (Html.BeginForm("Delete", "Order", new { id = Model.Id }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.Id)
+
+    <button type="submit" class="btn btn-danger">Delete</button>
+    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-secondary" })
+}

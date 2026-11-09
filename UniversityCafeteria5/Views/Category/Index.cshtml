@@ -12,15 +12,21 @@
             <th>Id</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var category in Model)
         {
             <tr>
-                <td>@category.ID</td>
-                <td>@category.Name</td>
-                <td>@category.Description</td>
+                <td>@Html.DisplayFor(item => category.ID)</td>
+                <td>@Html.DisplayFor(item => category.Name)</td>
+                <td>@Html.DisplayFor(item => category.Description)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = category.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = category.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = category.ID })
+                </td>
             </tr>
         }
     </tbody>

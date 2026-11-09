@@ -6,6 +6,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
 
     <div>
         @Html.LabelFor(model => model.Name)

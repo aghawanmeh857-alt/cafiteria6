@@ -15,6 +15,7 @@
             <th>Quantity</th>
             <th>Category Id</th>
             <th>Supplier Id</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +28,11 @@
                 <td>@Html.DisplayFor(item => product.Quantity)</td>
                 <td>@Html.DisplayFor(item => product.CategoryID)</td>
                 <td>@Html.DisplayFor(item => product.SupplierID)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = product.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = product.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = product.ID })
+                </td>
             </tr>
         }
     </tbody>

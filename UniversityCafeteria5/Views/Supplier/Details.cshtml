@@ -1,0 +1,13 @@
+﻿@model UniversityCafeteria5.Models.Supplier
+
+<h2>Supplier Details</h2>
+
+<p><strong>Id:</strong> @Html.DisplayFor(model => model.ID)</p>
+<p><strong>Name:</strong> @Html.DisplayFor(model => model.Name)</p>
+<p><strong>Phone:</strong> @Html.DisplayFor(model => model.phone)</p>
+<p><strong>Email:</strong> @Html.DisplayFor(model => model.Email)</p>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to Suppliers", "Index")
+</p>

@@ -1,0 +1,16 @@
+﻿@model UniversityCafeteria5.Models.Employee
+
+<h2>Employee Details</h2>
+
+<p><strong>Id:</strong> @Html.DisplayFor(model => model.Id)</p>
+<p><strong>Full Name:</strong> @Html.DisplayFor(model => model.FullName)</p>
+<p><strong>Phone:</strong> @Html.DisplayFor(model => model.Phone)</p>
+<p><strong>Email:</strong> @Html.DisplayFor(model => model.Email)</p>
+<p><strong>Position:</strong> @Html.DisplayFor(model => model.Position)</p>
+<p><strong>Salary:</strong> @Html.DisplayFor(model => model.Salary)</p>
+<p><strong>Hire Date:</strong> @Html.DisplayFor(model => model.HireDate)</p>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to Employees", "Index")
+</p>

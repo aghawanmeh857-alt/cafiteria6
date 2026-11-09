@@ -13,6 +13,7 @@
             <th>Name</th>
             <th>Phone</th>
             <th>Email</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +24,11 @@
                 <td>@Html.DisplayFor(item => supplier.Name)</td>
                 <td>@Html.DisplayFor(item => supplier.phone)</td>
                 <td>@Html.DisplayFor(item => supplier.Email)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = supplier.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = supplier.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = supplier.ID })
+                </td>
             </tr>
         }
     </tbody>

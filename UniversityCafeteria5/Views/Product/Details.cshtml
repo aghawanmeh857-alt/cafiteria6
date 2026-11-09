@@ -1,0 +1,15 @@
+﻿@model UniversityCafeteria5.Models.Product
+
+<h2>Product Details</h2>
+
+<p><strong>Id:</strong> @Html.DisplayFor(model => model.ID)</p>
+<p><strong>Name:</strong> @Html.DisplayFor(model => model.Name)</p>
+<p><strong>Price:</strong> @Html.DisplayFor(model => model.Price)</p>
+<p><strong>Quantity:</strong> @Html.DisplayFor(model => model.Quantity)</p>
+<p><strong>Category Id:</strong> @Html.DisplayFor(model => model.CategoryID)</p>
+<p><strong>Supplier Id:</strong> @Html.DisplayFor(model => model.SupplierID)</p>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to Products", "Index")
+</p>

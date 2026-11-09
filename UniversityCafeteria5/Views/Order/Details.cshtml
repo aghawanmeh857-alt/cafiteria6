@@ -1,0 +1,15 @@
+﻿@model UniversityCafeteria5.Models.Order
+
+<h2>Order Details</h2>
+
+<p><strong>Id:</strong> @Html.DisplayFor(model => model.Id)</p>
+<p><strong>Customer Name:</strong> @Html.DisplayFor(model => model.CustomerName)</p>
+<p><strong>Order Date:</strong> @Html.DisplayFor(model => model.OrderDate)</p>
+<p><strong>Total Price:</strong> @Html.DisplayFor(model => model.TotalPrice)</p>
+<p><strong>Status:</strong> @Html.DisplayFor(model => model.Status)</p>
+<p><strong>Employee Id:</strong> @Html.DisplayFor(model => model.EmployeeId)</p>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to Orders", "Index")
+</p>

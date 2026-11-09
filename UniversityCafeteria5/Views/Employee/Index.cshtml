@@ -1,0 +1,41 @@
+﻿@model IEnumerable<UniversityCafeteria5.Models.Employee>
+
+<h2>Employees</h2>
+
+<p>
+    @Html.ActionLink("Add New Employee", "Create")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Full Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Position</th>
+            <th>Salary</th>
+            <th>Hire Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(item => employee.Id)</td>
+                <td>@Html.DisplayFor(item => employee.FullName)</td>
+                <td>@Html.DisplayFor(item => employee.Phone)</td>
+                <td>@Html.DisplayFor(item => employee.Email)</td>
+                <td>@Html.DisplayFor(item => employee.Position)</td>
+                <td>@Html.DisplayFor(item => employee.Salary)</td>
+                <td>@Html.DisplayFor(item => employee.HireDate)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = employee.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = employee.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = employee.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
